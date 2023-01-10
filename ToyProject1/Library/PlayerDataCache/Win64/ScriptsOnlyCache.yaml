@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ButtonEvent
     - CameraMove
     - GameManagement
     - ItemScript
@@ -21,6 +22,7 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
@@ -41,17 +43,30 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Style
     - TMPro.VertexGradient
     UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
     - UnityEngine.TextCore.GlyphMetrics
     - UnityEngine.TextCore.GlyphRect
     UnityEngine.UI:
+    - UnityEngine.UI.AnimationTriggers
+    - UnityEngine.UI.Button/ButtonClickedEvent
+    - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
-  methodsToPreserve: []
+    - UnityEngine.UI.Navigation
+    - UnityEngine.UI.SpriteState
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: ButtonEvent
+    methodName: EndButton
+  - assembly: Assembly-CSharp
+    fullTypeName: ButtonEvent
+    methodName: StartButton
   sceneClasses:
-    Assets/Scenes/Example1_0.unity:
+    Assets/Scenes/Example1_1.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -69,8 +84,6 @@ ScriptsOnlyBuild:
     - Class: 43
       Script: {instanceID: 0}
     - Class: 48
-      Script: {instanceID: 0}
-    - Class: 49
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
@@ -93,33 +106,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1546}
     - Class: 114
-      Script: {instanceID: 2210}
+      Script: {instanceID: 2644}
     - Class: 114
-      Script: {instanceID: 2646}
+      Script: {instanceID: 2872}
     - Class: 114
-      Script: {instanceID: 2874}
+      Script: {instanceID: 3466}
     - Class: 114
-      Script: {instanceID: 3468}
+      Script: {instanceID: 4458}
     - Class: 114
-      Script: {instanceID: 4132}
+      Script: {instanceID: 4904}
     - Class: 114
-      Script: {instanceID: 4248}
+      Script: {instanceID: 5020}
     - Class: 114
-      Script: {instanceID: 4460}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 4528}
+      Script: {instanceID: 5918}
     - Class: 114
-      Script: {instanceID: 4906}
+      Script: {instanceID: 6074}
     - Class: 114
-      Script: {instanceID: 5022}
-    - Class: 114
-      Script: {instanceID: 5306}
-    - Class: 114
-      Script: {instanceID: 5920}
-    - Class: 114
-      Script: {instanceID: 6076}
-    - Class: 114
-      Script: {instanceID: 6420}
+      Script: {instanceID: 6418}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -140,7 +145,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/Scenes/Example1_1.unity:
+    Assets/Scenes/Example1_2.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -164,6 +169,71 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    Assets/Scenes/Title.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1546}
+    - Class: 114
+      Script: {instanceID: 2208}
+    - Class: 114
+      Script: {instanceID: 2644}
+    - Class: 114
+      Script: {instanceID: 2872}
+    - Class: 114
+      Script: {instanceID: 3172}
+    - Class: 114
+      Script: {instanceID: 4130}
+    - Class: 114
+      Script: {instanceID: 4246}
+    - Class: 114
+      Script: {instanceID: 4526}
+    - Class: 114
+      Script: {instanceID: 5304}
+    - Class: 114
+      Script: {instanceID: 5918}
+    - Class: 114
+      Script: {instanceID: 6074}
+    - Class: 114
+      Script: {instanceID: 6418}
+    - Class: 114
+      Script: {instanceID: 24044}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -1168,8 +1238,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ButtonEvent
   platform: 19
   scenePathNames:
-  - Assets/Scenes/Example1_0.unity
+  - Assets/Scenes/Title.unity
   - Assets/Scenes/Example1_1.unity
+  - Assets/Scenes/Example1_2.unity
   playerPath: "C:/Users/ms/OneDrive/\uBC14\uD0D5 \uD654\uBA74/UnityToyProject/ToyProject1_ball.exe"
