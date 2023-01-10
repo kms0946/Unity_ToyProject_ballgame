@@ -1393,7 +1393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalItemCount: 5
-  StageNumber: 1
+  StageNumber: 2
   StageCountText: {fileID: 58473090}
   PlayerCountText: {fileID: 1794988253}
 --- !u!4 &1264794271
