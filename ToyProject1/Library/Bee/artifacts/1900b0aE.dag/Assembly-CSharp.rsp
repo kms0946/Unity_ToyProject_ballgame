@@ -355,6 +355,7 @@
 "Assets/Script/CameraMove.cs"
 "Assets/Script/GameManagement.cs"
 "Assets/Script/ItemScript.cs"
+"Assets/Script/PauseUtil.cs"
 "Assets/Script/PlayerBall.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
